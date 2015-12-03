@@ -23,7 +23,7 @@ function windfarms_install() {
 
 	// Content type defination.
 	$content_type = array(
-		'type' => 'Windfarm',
+		'type' => 'windfarm',
 		'name' => $t('Wind Farm'),
 		'description' => $t('A wind farm, including location.'),
 		'title_label' => $t('Facility Name'),
