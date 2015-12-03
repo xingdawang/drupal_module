@@ -114,12 +114,13 @@ function windfarms_admin_settings_form($node, &$form_state) {
 		'#required' => TRUE,
 		);
 
-	$form['submit'] = array(
-		'#type' => 'submit',
-		'#value' => t('Save'),
-	);
+	// $form['submit'] = array(
+	// 	'#type' => 'submit',
+	// 	'#value' => t('Save'),
+	// );
 
-	return $form;
+	// return $form;
+	return system_settings_form($form);
 }
 
 /**
@@ -150,23 +151,23 @@ function windfarms_admin_settings_form_validate($form, &$form_state) {
 		form_set_error('windfarms_default_center_long', t('Longitude must be between -180 and 180'));
 	}
 }
-/**
- * Callback function. Process a validated wind farm admin setting submission.
- */
-function windfarms_admin_settings_form_submit($form, &$form_state) {
-	// Rebuild the forms
-	$form_state['rebuild'] = TRUE;
-	//persistent variables
-	//variable_get | Get a value by name and optionally provides default value if the variable has never been set.
-	//variable_set | Saves a value to the databse by name
-	//variable_del | Delete a value from the databse by name
+// /**
+//  * Callback function. Process a validated wind farm admin setting submission.
+//  */
+// function windfarms_admin_settings_form_submit($form, &$form_state) {
+// 	// Rebuild the forms
+// 	$form_state['rebuild'] = TRUE;
+// 	//persistent variables
+// 	//variable_get | Get a value by name and optionally provides default value if the variable has never been set.
+// 	//variable_set | Saves a value to the databse by name
+// 	//variable_del | Delete a value from the databse by name
 
-	// Save wind farm setting variables
-	variable_set('windfarms_gmap', $form_state['values']['windfarms_gmap']);
-	variable_set('windfarms_default_center_lat', $form_state['values']['windfarms_default_center_lat']);
-	variable_set('windfarms_default_center_long', $form_state['values']['windfarms_default_center_long']);
-	variable_set('windfarms_default_gmap_zoom', $form_state['values']['windfarms_default_gmap_zoom']);
+// 	// Save wind farm setting variables
+// 	variable_set('windfarms_gmap', $form_state['values']['windfarms_gmap']);
+// 	variable_set('windfarms_default_center_lat', $form_state['values']['windfarms_default_center_lat']);
+// 	variable_set('windfarms_default_center_long', $form_state['values']['windfarms_default_center_long']);
+// 	variable_set('windfarms_default_gmap_zoom', $form_state['values']['windfarms_default_gmap_zoom']);
 
-	// Notify user
-	drupal_set_message(t('Wind Farm settings saved.'));
-}
+// 	// Notify user
+// 	drupal_set_message(t('Wind Farm settings saved.'));
+// }
